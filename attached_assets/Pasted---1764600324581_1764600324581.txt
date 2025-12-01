@@ -1,0 +1,52 @@
+
+============================================================
+  ✗ 실패: 테스트 중 오류 발생
+============================================================
+오류: Message: no such element: Unable to locate element: {"method":"tag name","selector":"h3"}
+  (Session info: chrome=142.0.7444.176); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+        0x904103
+        0x904144
+        0x70e71d
+        0x75a03d
+        0x75a41b
+        0x74f8c1
+        0x77c954
+        0x74f7c4
+        0x77cac4
+        0x79ee17
+        0x77c706
+        0x74da30
+        0x74ed54
+        0xb757b4
+        0xb7098a
+        0x92c392
+        0x91c4c8
+        0x92324d
+        0x90c478
+        0x90c63c
+        0x8f67ca
+        0x74f15d49
+        0x7728d6db
+        0x7728d661
+
+
+브라우저를 닫고 있습니다...
+Traceback (most recent call last):
+  File "C:\dev\elice-project\vanilla-ui-testboard\tests\comprehensive_test.py", line 377, in <module>
+    test_comprehensive_flow()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\dev\elice-project\vanilla-ui-testboard\tests\comprehensive_test.py", line 193, in test_comprehensive_flow
+    title = post.find_element(By.TAG_NAME, "h3").text
+            ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 602, in find_element
+    return self._execute(Command.FIND_CHILD_ELEMENT, {"using": by, "value": value})["value"]
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\site-packages\selenium\webdriver\remote\webelement.py", line 573, in _execute
+    return self._parent.execute(command, params)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 458, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Python313\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response

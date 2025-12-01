@@ -190,7 +190,16 @@ def test_comprehensive_flow():
         
         # 각 게시글 제목 출력
         for i, post in enumerate(posts[:5], 1):
-            title = post.find_element(By.TAG_NAME, "h3").text
+            try:
+                # data-testid="text-post-title" 속성으로 제목 찾기
+                title_elem = post.find_element(By.CSS_SELECTOR, '[data-testid^="text-post-"]')
+                title = title_elem.text
+            except:
+                # 실패하면 h2나 다른 헤더 태그 시도
+                try:
+                    title = post.find_element(By.TAG_NAME, "h2").text
+                except:
+                    title = "제목 없음"
             print(f"    - {i}번 게시글: {title[:40]}...")
         
         
