@@ -1,105 +1,57 @@
-# Vanilla Community Platform
+# Vanilla UI Testboard  
+로컬 환경에서 웹 UI 자동화 테스트를 실습하기 위한 **간단한 커뮤니티 웹 프로젝트**입니다.  
+Node.js 기반 서버와 Vanilla JavaScript UI로 구성되어 있으며,  
+Python + Selenium을 이용한 자동화 테스트를 직접 실행해볼 수 있습니다.
 
-온라인 게시판. 회원가입, 로그인, 게시글 작성/검색, 밤모드 같은 기본 기능들이 다 들어있다.
+이 프로젝트는 **교육·실습을 위해 제작된 프로젝트**로,  
+복잡한 설정 없이 바로 로컬에서 실행하고 실습할 수 있도록 구성되어 있습니다.
 
-## 프로젝트 구조
+---
 
-```
-Frontend (React)
-    ↓↑
-Backend (Node.js + Express)
-    ↓↑
-Database (JSON)
-```
+## 🚀 빠른 시작
 
-좀 더 자세히 보면:
-
-```
-client/              # 프론트엔드
-├── src/components/  # UI 부품들
-└── src/pages/       # 페이지들
-
-server/              # 백엔드
-├── routes.ts        # API 엔드포인트
-├── storage.ts       # 데이터 I/O
-└── index.ts         # 서버 시작
-
-db/                  # 데이터 저장소
-├── users.json
-└── posts.json
-
-shared/              # 공유 코드
-└── schema.ts        # 데이터 스키마
-
-tests/               # 자동 테스트
-└── comprehensive_test.py
-```
-
-## 시작하기
-
+### 1. 프로젝트 클론
 ```bash
+git clone https://github.com/DevYeop/vanilla-ui-testboard.git
+cd vanilla-ui-testboard
+```
+### 2. 의존성 설치
+```
+npm install
+```
+### 3. 서버 실행
+```
 npm run dev
 ```
-
-`http://localhost:5000` 에서 실행된다.
-
-## 기능
-
-- **인증**: 회원가입, 로그인, 로그아웃
-- **게시글**: 최신 게시글 5개 표시, 상세보기
-- **검색**: 키워드로 게시글 검색
-- **테마**: 라이트/다크 모드 전환
-
-## API 엔드포인트
-
-| 메서드 | 경로 | 설명 |
-|--------|------|------|
-| POST | `/api/signup` | 회원가입 |
-| POST | `/api/login` | 로그인 |
-| POST | `/api/logout` | 로그아웃 |
-| GET | `/api/me` | 현재 사용자 정보 |
-| GET | `/api/posts` | 게시글 목록 |
-| GET | `/api/posts/:id` | 게시글 상세 |
-| GET | `/api/posts/search?q=keyword` | 게시글 검색 |
-
-## 테스트
-
-```bash
-cd tests
-python comprehensive_test.py
+브라우저에서 아래 주소로 접속하여 확인할 수 있습니다.
 ```
+http://localhost:5000
+```
+### 🧪 UI 자동화 테스트 실행 (Python + Selenium)
 
-Selenium으로 회원가입부터 로그아웃까지 전체 플로우를 자동 테스트한다.
+Python 환경이 준비되었다면, 아래 명령어로 테스트 파일을 실행할 수 있습니다.
+```
+python ./tests/파일명.py
+```
+예)
+```
+python ./tests/test_login.py
+python ./tests/test_search.py
+python ./tests/test_theme_toggle.py
+```
+테스트 실행 시 실제 브라우저가 자동으로 열리고
+로그인, 검색, UI 모드 전환 등 다양한 기능이 자동으로 검증됩니다.
 
-## 기술 스택
+### 📚 교육 목적 안내
 
-**Frontend**
-- React + TypeScript
-- Tailwind CSS + shadcn/ui
-- TanStack Query
+이 프로젝트는 프로그래밍과 테스트 자동화의 진입 장벽을 낮추기 위해 설계된 실습용 프로젝트입니다.
+복잡한 문법이나 프레임워크 학습보다,
+“브라우저를 자동으로 조작해 보고, UI가 변하는 것을 자동으로 확인하는 경험”에 초점을 맞춥니다.
 
-**Backend**
-- Node.js + Express
-- Zod (데이터 검증)
+로컬 환경 설정이 어려운 경우에도
+강의 중 개별적으로 도움을 드립니다.
 
-**Testing**
-- Selenium (Python)
+### 📄 License – MIT License
 
-## 주의사항
-
-- 비밀번호가 암호화되지 않음 (학습용)
-- JSON 파일 기반이라 단일 프로세스 환경에서만 동작
-- 동시성 처리 미구현
-
-## 확장할 수 있는 기능
-
-- 게시글 작성/삭제
-- 댓글 시스템
-- 좋아요/팔로우
-- 프로필 페이지
-- 실제 DB 연동 (PostgreSQL 등)
-- 배포
-
-## 라이선스
-
-학습용. 자유롭게 수정해서 써도 된다.
+본 프로젝트는 MIT 라이선스를 따르며, 모든 코드는 학습자들의 성장과 경험을 위해 존재함.
+이 지식을 활용해, 여러분이 실습, 변형, 재구성, 재사용을 마음껏 해보며 다방면으로 활용하길 희망함.
