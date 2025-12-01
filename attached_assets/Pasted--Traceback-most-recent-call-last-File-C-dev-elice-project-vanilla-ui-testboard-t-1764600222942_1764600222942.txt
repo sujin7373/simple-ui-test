@@ -1,0 +1,50 @@
+ 닫고 있습니다...
+Traceback (most recent call last):
+  File "C:\dev\elice-project\vanilla-ui-testboard\tests\comprehensive_test.py", line 367, in <module>
+    test_comprehensive_flow()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\dev\elice-project\vanilla-ui-testboard\tests\comprehensive_test.py", line 131, in test_comprehensive_flow
+    click_element(driver, "button-logout")
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\dev\elice-project\vanilla-ui-testboard\tests\comprehensive_test.py", line 65, in click_element
+    element = find_by_testid(driver, testid)
+  File "C:\dev\elice-project\vanilla-ui-testboard\tests\comprehensive_test.py", line 61, in find_by_testid
+    return driver.find_element(By.CSS_SELECTOR, f'[data-testid="{testid}"]')   
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^   
+  File "C:\Python313\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 926, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^   
+  File "C:\Python313\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 458, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Python313\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"[data-testid="button-logout"]"}
+  (Session info: chrome=142.0.7444.176); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+        0x904103
+        0x904144
+        0x70e71d
+        0x75a03d
+        0x75a41b
+        0x7a17f2
+        0x77c954
+        0x79ee17
+        0x77c706
+        0x74da30
+        0x74ed54
+        0xb757b4
+        0xb7098a
+        0x92c392
+        0x91c4c8
+        0x92324d
+        0x90c478
+        0x90c63c
+        0x8f67ca
+        0x74f15d49
+        0x7728d6db
+        0x7728d661
+
+
+leesa@DESKTOP-Q8TT1VD MINGW64 /c/dev/elice-

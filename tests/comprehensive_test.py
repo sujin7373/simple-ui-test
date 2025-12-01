@@ -127,7 +127,12 @@ def test_comprehensive_flow():
         print("🔓 2단계: 로그아웃 테스트")
         print("="*60)
         
-        print_step(1, "로그아웃 버튼 클릭")
+        print_step(1, "사용자 메뉴 드롭다운 열기")
+        click_element(driver, "button-user-menu")
+        time.sleep(0.5)
+        print_success("드롭다운 메뉴 열림")
+        
+        print_step(2, "로그아웃 버튼 클릭")
         click_element(driver, "button-logout")
         time.sleep(1.5)
         print_success("로그아웃 완료")
@@ -309,12 +314,17 @@ def test_comprehensive_flow():
         current_theme = html_element.get_attribute("class")
         print_success(f"현재 테마: {current_theme if current_theme else '라이트 모드'}")
         
-        print_step(2, "로그아웃 버튼 클릭")
+        print_step(2, "사용자 메뉴 드롭다운 열기")
+        click_element(driver, "button-user-menu")
+        time.sleep(0.5)
+        print_success("드롭다운 메뉴 열림")
+        
+        print_step(3, "로그아웃 버튼 클릭")
         click_element(driver, "button-logout")
         time.sleep(1.5)
         print_success("로그아웃 완료")
         
-        print_step(3, "로그아웃 후 테마 확인")
+        print_step(4, "로그아웃 후 테마 확인")
         theme_after_logout = html_element.get_attribute("class")
         print_success(f"로그아웃 후 테마: {theme_after_logout if theme_after_logout else '라이트 모드'}")
         
