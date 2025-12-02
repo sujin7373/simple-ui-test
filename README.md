@@ -1,6 +1,6 @@
-# 프로젝트 개요
+# React 커뮤니티 플랫폼
 
-로컬 환경에서 웹 UI 자동화 테스트를 실습하기 위한 **간단한 커뮤니티 웹 프로젝트**입니다.  
+로컬 환경에서 웹 UI 자동화 테스트를 실습하기 위한 **React 기반 커뮤니티 웹 프로젝트**입니다.  
 Python + Selenium을 이용한 **브라우저 자동화 테스트**를 직접 수행해볼 수 있습니다.
 
 이 프로젝트는 **교육·실습 목적**으로 제작되었으며,  
@@ -13,8 +13,8 @@ UI 자동화 테스트를 경험할 수 있도록 구성되어 있습니다.
 
 ### 1. 프로젝트 클론
 ```bash
-git clone https://github.com/DevYeop/vanilla-ui-testboard.git
-cd vanilla-ui-testboard
+git clone https://github.com/DevYeop/react-community-platform.git
+cd react-community-platform
 ```
 ### 2. 의존성 설치
 ```

@@ -1,4 +1,4 @@
-# Design Guidelines: Vanilla Community Platform
+# Design Guidelines: React Community Platform
 
 ## Design Approach
 

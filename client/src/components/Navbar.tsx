@@ -2,7 +2,7 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "./ThemeProvider";
 import { useAuth } from "./AuthContext";
-import { Sun, Moon, LogOut, Search, Home, Users, Plus } from "lucide-react";
+import { Sun, Moon, LogOut, Search, Home, Code, Plus } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -32,8 +32,8 @@ export default function Navbar() {
         <div className="flex items-center gap-6">
           <Link href="/" data-testid="link-home-logo">
             <div className="flex items-center gap-2">
-              <Users className="h-6 w-6 text-primary" />
-              <span className="text-lg font-semibold">Vanilla</span>
+              <Code className="h-6 w-6 text-primary" />
+              <span className="text-lg font-semibold">React</span>
             </div>
           </Link>
           
