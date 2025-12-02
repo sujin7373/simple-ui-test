@@ -52,6 +52,17 @@ try:
     # 로그인 완료 확인: "Create Post" 버튼이 나타날 때까지 대기 (세션 설정 완료)
     print("\n[1-1단계] 로그인 완료 확인 중...")
     wait.until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Create Post')]")))
+    
+    # 쿠키 확인 및 세션 안정화 대기
+    print("[1-2단계] 세션 쿠키 확인 중...")
+    time.sleep(1)  # 쿠키가 완전히 저장될 때까지 대기
+    cookies = driver.get_cookies()
+    session_cookie = [c for c in cookies if c['name'] == 'connect.sid']
+    if session_cookie:
+        print(f"✓ 세션 쿠키 확인됨: {session_cookie[0]['name']}")
+    else:
+        print("⚠ 경고: 세션 쿠키가 없습니다. 게시글 생성이 실패할 수 있습니다.")
+    
     print("✓ 로그인 완료 및 인증 상태 확인됨")
     
     # 2-1단계: 게시글 생성 버튼 클릭
