@@ -58,9 +58,10 @@ try:
     time.sleep(3)
     print("✓ 홈페이지 로드됨")
     
-    # 2-1단계: 게시글 생성 페이지로 이동
-    print("\n[2-1단계] 게시글 생성 페이지로 이동...")
-    driver.get(f"{BASE_URL}/post/create")
+    # 2-1단계: 게시글 생성 버튼 클릭
+    print("\n[2-1단계] 게시글 생성 버튼 클릭...")
+    create_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Create Post')]")))
+    create_button.click()
     time.sleep(3)
     print("✓ 게시글 생성 페이지 로드됨")
     
