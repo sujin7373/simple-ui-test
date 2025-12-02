@@ -52,8 +52,14 @@ try:
     time.sleep(2)
     print("✓ 로그인 완료")
     
-    # 2단계: 게시글 생성 페이지로 이동
-    print("\n[2단계] 게시글 생성 페이지로 이동...")
+    # 2단계: 홈페이지로 이동 (AuthContext 초기화)
+    print("\n[2단계] 홈페이지로 이동 (인증 상태 확인 중)...")
+    driver.get(f"{BASE_URL}/")
+    time.sleep(3)
+    print("✓ 홈페이지 로드됨")
+    
+    # 2-1단계: 게시글 생성 페이지로 이동
+    print("\n[2-1단계] 게시글 생성 페이지로 이동...")
     driver.get(f"{BASE_URL}/post/create")
     time.sleep(3)
     print("✓ 게시글 생성 페이지 로드됨")
