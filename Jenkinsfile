@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/sujin7373/simple-ui-test.git'
+                git branch: 'main', url: 'https://github.com/sujin7373/simple-ui-test.git'
             }
         }
 
