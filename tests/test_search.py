@@ -129,20 +129,3 @@ def test_search_async_loading():
     finally:
         driver.quit()
 
-
-if __name__ == "__main__":
-    print("\n=== Running Search Tests ===\n")
-    
-    print("Test 1: Search with Results")
-    test_search_with_results()
-    
-    print("\nTest 2: Search No Results")
-    test_search_no_results()
-    
-    print("\nTest 3: Search Result Click")
-    test_search_result_click()
-    
-    print("\nTest 4: Async Loading")
-    test_search_async_loading()
-    
-    print("\n=== All Search Tests Passed ===\n")

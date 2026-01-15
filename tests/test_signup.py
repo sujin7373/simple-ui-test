@@ -126,17 +126,3 @@ def test_signup_password_mismatch():
     finally:
         driver.quit()
 
-
-if __name__ == "__main__":
-    print("\n=== Running Signup Tests ===\n")
-    
-    print("Test 1: Signup Success")
-    test_signup_success()
-    
-    print("\nTest 2: Duplicate Username")
-    test_signup_duplicate_id()
-    
-    print("\nTest 3: Password Mismatch")
-    test_signup_password_mismatch()
-    
-    print("\n=== All Signup Tests Passed ===\n")

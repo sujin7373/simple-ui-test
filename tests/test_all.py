@@ -32,7 +32,7 @@ from test_search import (
 )
 
 
-def run_all_tests():
+def test_run_all():
     """Run all test suites."""
     tests_passed = 0
     tests_failed = 0
@@ -99,8 +99,3 @@ def run_all_tests():
     logger.info("\n" + "=" * 70 + "\n")
     
     return tests_failed == 0
-
-
-if __name__ == "__main__":
-    success = run_all_tests()
-    sys.exit(0 if success else 1)

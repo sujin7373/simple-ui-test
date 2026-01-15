@@ -105,17 +105,3 @@ def test_theme_on_different_pages():
     finally:
         driver.quit()
 
-
-if __name__ == "__main__":
-    print("\n=== Running Theme Tests ===\n")
-    
-    print("Test 1: Theme Toggle")
-    test_theme_toggle()
-    
-    print("\nTest 2: Theme Persistence")
-    test_theme_persistence()
-    
-    print("\nTest 3: Theme on Different Pages")
-    test_theme_on_different_pages()
-    
-    print("\n=== All Theme Tests Passed ===\n")

@@ -153,21 +153,3 @@ def test_logout():
         
     finally:
         driver.quit()
-
-
-if __name__ == "__main__":
-    print("\n=== Running Login Tests ===\n")
-    
-    print("Test 1: Login Success")
-    test_login_success()
-    
-    print("\nTest 2: Wrong Password")
-    test_login_wrong_password()
-    
-    print("\nTest 3: Non-existent User")
-    test_login_nonexistent_user()
-    
-    print("\nTest 4: Logout")
-    test_logout()
-    
-    print("\n=== All Login Tests Passed ===\n")
