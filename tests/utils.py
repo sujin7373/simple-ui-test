@@ -46,7 +46,7 @@ def get_driver():
     """Create and return a Chrome WebDriver instance."""
     chrome_options = Options()
     # Set HEADLESS=true for headless mode (default is false for local browser window)
-    if os.environ.get("HEADLESS", "false").lower() != "false":
+    if os.environ.get("HEADLESS", "true").lower() != "true":
         chrome_options.add_argument("--headless=new")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
@@ -54,7 +54,7 @@ def get_driver():
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--remote-debugging-port=9222")
     
-    service = Service(ChromeDriverManager().install())
+    service = Service("/usr/bin/chromedriver")
     driver = webdriver.Chrome(service=service, options=chrome_options)
     driver.implicitly_wait(10)
     return driver

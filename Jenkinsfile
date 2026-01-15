@@ -1,16 +1,27 @@
 pipeline {
     agent any
 
+    environment {
+        HEADLESS = 'true' // 컨테이너 안에서 헤드리스 모드
+        VENV_DIR = "${WORKSPACE}/venv"
+    }
+
     triggers {
         githubPush()
     }
 
     stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/sujin7373/simple-ui-test.git'
+            }
+        }
+
         stage('Install Dependencies') {
             steps {
                 sh '''
-                    python3 -m venv venv
-                    . venv/bin/activate
+                    python3 -m venv $VENV_DIR
+                    . $VENV_DIR/bin/activate
                     pip install -r requirements.txt
                     npm ci
                 '''
@@ -28,7 +39,7 @@ pipeline {
                     sleep 5
 
                     # pytest 실행
-                    . venv/bin/activate
+                    . $VENV_DIR/bin/activate
                     pytest tests/test_all.py
 
                     # 서버 종료
