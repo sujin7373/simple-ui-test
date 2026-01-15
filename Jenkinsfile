@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.11-bullseye'
-            args '-u root:root' // 권한 문제 방지
-        }
-    }
+    agent any
 
     triggers {
         githubPush()
@@ -14,7 +9,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
-                    python -m venv venv
+                    python3 -m venv venv
                     . venv/bin/activate
                     pip install -r requirements.txt
                     npm ci
