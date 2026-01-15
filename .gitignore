@@ -19,6 +19,7 @@ tests/screenshots/
 # Test runtime data
 tests/exam/cookies.json
 tests/exam/login_cookies.json
+tests/exam/all_posts.json
 
 /.vscode
 /.venv
