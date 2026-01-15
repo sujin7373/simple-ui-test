@@ -45,9 +45,11 @@ def log_test_start(test_name: str):
 def get_driver():
     """Create and return a Chrome WebDriver instance."""
     chrome_options = Options()
-    # Set HEADLESS=true for headless mode (default is false for local browser window)
-    if os.environ.get("HEADLESS", "true").lower() != "true":
-        chrome_options.add_argument("--headless=new")
+    
+    chrome_options.binary_location = "/usr/bin/chromium"
+    
+    
+    chrome_options.add_argument("--headless=new")
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--window-size=1920,1080")

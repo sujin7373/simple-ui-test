@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         HEADLESS = 'true' // 컨테이너 안에서 헤드리스 모드
+        CHROME_BIN = '/usr/bin/chromium'
         VENV_DIR = "${WORKSPACE}/venv"
     }
 
