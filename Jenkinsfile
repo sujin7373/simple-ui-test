@@ -10,6 +10,13 @@ pipeline {
     }
 
     stages {
+        stage('Checkout') {
+            steps {
+                deleteDir()      // 🔥 기존 workspace 완전 삭제
+                checkout scm     // 🔄 git clone
+            }
+        }
+        
         stage('Install Dependencies') {
             steps {
                 sh '''
